@@ -1,1 +1,12 @@
+name: First Pipeline
 
+on:
+  push:
+    branches: 
+      - '**'
+
+jobs:
+        run: npm install
+        run: npm run prettier
+        run: npm run build
+        
