@@ -1,19 +1,13 @@
 import React from "react";
-import AuthLogin from "./authLogin";
-import AuthLogout from "./authLogout";
-import AuthProfile from "./authProfile";
-import LoginWithGoogle from "./LoginWithGoogle";
 
-function Header(){
-    return(
-        <div>
-            <AuthLogin />
-            <AuthLogout />
-            <LoginWithGoogle />
-            <AuthProfile />
 
-        </div>
-    )
+function Header() {
+  return (
+    <div>
+      <h1>O Rio de Janeiro continua lindo</h1>
+      <h2>Um dos melhores cafés do mundo!</h2>
+    </div>
+  );
 }
 
 export default Header;
