@@ -12,13 +12,35 @@
   <meta name="google-signin-client_id" content="130222587532-d86div3skbbuumg6j2ns8u3u3f8fj37b.apps.googleusercontent.com">
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
   <!-- Adicione o parâmetro onload à URL do script para especificar a função de callback -->
-  <script src="https://apis.google.com/js/platform.js?onload=initGoogleAPI" ></script>
+
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   <title>React App</title>
 </head>
 <body>
   <div id="root"></div>
   <!-- Defina a função de callback initGoogleAPI no escopo global -->
+
   
+  <script>
+    function onSuccess(googleUser) {
+      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+      console.log(error);
+    }
+    function renderButton() {
+      gapi.signin2.render('my-signin2', {
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark',
+        'onsuccess': onSuccess,
+        'onfailure': onFailure
+      });
+    }
+  </script>
+
+  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
 </body>
 </html>

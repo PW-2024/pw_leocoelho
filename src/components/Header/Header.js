@@ -2,13 +2,14 @@ import React from "react";
 import AuthLogin from "./authLogin";
 import AuthLogout from "./authLogout";
 import AuthProfile from "./authProfile";
+import LoginWithGoogle from "./LoginWithGoogle";
 
 function Header(){
     return(
         <div>
             <AuthLogin />
             <AuthLogout />
-            <div className="g-signin2" data-onsuccess="onSignIn"></div>
+            <LoginWithGoogle />
             <AuthProfile />
 
         </div>
