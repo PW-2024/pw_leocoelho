@@ -1,10 +1,11 @@
-import React from "react";
-import Header from "./components/Header/Header";
+
+import './App.css';
+import Balances from './store/balances';
 
 function App() {
   return (
     <div>
-      <Header />
+      <Balances />
     </div>
   );
 }
