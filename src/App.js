@@ -11,13 +11,13 @@ function App() {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        // Filtra as receitas para incluir apenas aquelas que têm uma seção de "Ingredientes" com itens
+        
         const filteredRecipes = data.filter(recipe => {
           const ingredientes = recipe.secao.find(sec => sec.nome.trim().toLowerCase().includes("ingredientes"));
           return ingredientes && ingredientes.conteudo.length > 0;
         });
 
-        // Embaralha e seleciona as primeiras 20 receitas da lista filtrada
+        
         const shuffled = filteredRecipes.sort(() => 0.5 - Math.random());
         setRecipes(shuffled.slice(0, 20));
       })
